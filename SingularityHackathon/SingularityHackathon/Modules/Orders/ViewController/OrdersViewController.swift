@@ -1,17 +1,16 @@
 //
-//  ViewController.swift
+//  OrdersViewController.swift
 //  SingularityHackathon
 //
 //  Created by rauan on 4/8/24.
 //
 
 import UIKit
-import SnapKit
 
 fileprivate typealias foodDataSource = UICollectionViewDiffableDataSource<Section, Int>
 fileprivate typealias foodDataSourceSnapShot = NSDiffableDataSourceSnapshot<Section, Int>
 
-class MenuViewController: UIViewController {
+class OrdersViewController: UIViewController {
     
     private var resource = [Int]()
     private var dataSource: foodDataSource!
@@ -20,8 +19,8 @@ class MenuViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .clear
-        collectionView.register(MenuCollectionViewCell.self,
-            forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
+        collectionView.register(OrdersCollectionViewCell.self,
+            forCellWithReuseIdentifier: OrdersCollectionViewCell.identifier)
         return collectionView
         
     }()
@@ -35,11 +34,9 @@ class MenuViewController: UIViewController {
 
     private func setupViews() {
         
-        
-        
         view.backgroundColor = .background
         view.addSubview(compositionalLayout)
-        navigationItem.title = "Menu"
+        navigationItem.title = "Orders"
         
         compositionalLayout.snp.makeConstraints { make in
             make.bottom.top.equalTo(view.safeAreaLayoutGuide)
@@ -49,7 +46,7 @@ class MenuViewController: UIViewController {
 
 }
 
-extension MenuViewController {
+extension OrdersViewController {
     private func createData() {
         for i in 0...10{
             resource.append(i)
@@ -63,12 +60,14 @@ extension MenuViewController {
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = .init(top: 8, leading: 8, bottom: 8, trailing: 8)
-        let group = NSCollectionLayoutGroup.horizontal(
+        
+        
+        let group = NSCollectionLayoutGroup.vertical(
             layoutSize: NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(0.5),
-                heightDimension: .fractionalHeight(0.5)),
-            repeatingSubitem: item,
-            count: 2)
+                widthDimension: .fractionalWidth(1.0),
+                heightDimension: .fractionalHeight(0.35)
+            ),
+            subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = .init(top: 8, leading: 8, bottom: 0, trailing: 8)
@@ -78,12 +77,12 @@ extension MenuViewController {
     }
 }
 
-extension MenuViewController {
+extension OrdersViewController {
     private func configureDataSource() {
-        dataSource = foodDataSource(collectionView: compositionalLayout) { (collectionView, indexPath, itemIdentifier) -> MenuCollectionViewCell? in
+        dataSource = foodDataSource(collectionView: compositionalLayout) { (collectionView, indexPath, itemIdentifier) -> OrdersCollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: MenuCollectionViewCell.identifier,
-                for: indexPath) as! MenuCollectionViewCell
+                withReuseIdentifier: OrdersCollectionViewCell.identifier,
+                for: indexPath) as! OrdersCollectionViewCell
             return cell
         }
         applySnapshot()

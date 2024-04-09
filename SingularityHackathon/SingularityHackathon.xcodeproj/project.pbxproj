@@ -19,7 +19,8 @@
 		91BD8D512BC476D600D30F6B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 91BD8D502BC476D600D30F6B /* SnapKit */; };
 		91BD8D532BC476D600D30F6B /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 91BD8D522BC476D600D30F6B /* SnapKit-Dynamic */; };
 		91BD8D572BC4786800D30F6B /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD8D562BC4786800D30F6B /* MenuCollectionViewCell.swift */; };
-		91BD8D5A2BC47CBA00D30F6B /* MenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD8D592BC47CBA00D30F6B /* MenuSection.swift */; };
+		91BD8D5A2BC47CBA00D30F6B /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD8D592BC47CBA00D30F6B /* Section.swift */; };
+		91FE9D3E2BC5630200EAE399 /* OrdersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FE9D3D2BC5630200EAE399 /* OrdersCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +36,8 @@
 		91BD8D4B2BC472D700D30F6B /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		91BD8D4D2BC472F500D30F6B /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		91BD8D562BC4786800D30F6B /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
-		91BD8D592BC47CBA00D30F6B /* MenuSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSection.swift; sourceTree = "<group>"; };
+		91BD8D592BC47CBA00D30F6B /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		91FE9D3D2BC5630200EAE399 /* OrdersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,8 @@
 		91BD8D2C2BC46EDC00D30F6B /* SingularityHackathon */ = {
 			isa = PBXGroup;
 			children = (
+				91FE9D402BC59ABF00EAE399 /* NetworkManager */,
+				91FE9D3F2BC59AB800EAE399 /* Target */,
 				91BD8D472BC471F100D30F6B /* Modules */,
 				91BD8D442BC46FC200D30F6B /* Resources */,
 				91BD8D3E2BC46EDD00D30F6B /* Info.plist */,
@@ -112,7 +116,7 @@
 		91BD8D492BC4720200D30F6B /* Orders */ = {
 			isa = PBXGroup;
 			children = (
-				91BD8D4B2BC472D700D30F6B /* OrdersViewController.swift */,
+				91FE9D3B2BC562D900EAE399 /* ViewController */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -145,9 +149,40 @@
 		91BD8D582BC47CA400D30F6B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				91BD8D592BC47CBA00D30F6B /* MenuSection.swift */,
+				91BD8D592BC47CBA00D30F6B /* Section.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		91FE9D3B2BC562D900EAE399 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91BD8D4B2BC472D700D30F6B /* OrdersViewController.swift */,
+				91FE9D3C2BC562EA00EAE399 /* Subviews */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		91FE9D3C2BC562EA00EAE399 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				91FE9D3D2BC5630200EAE399 /* OrdersCollectionViewCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		91FE9D3F2BC59AB800EAE399 /* Target */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
+		91FE9D402BC59ABF00EAE399 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +266,8 @@
 				91BD8D4C2BC472D700D30F6B /* OrdersViewController.swift in Sources */,
 				91BD8D322BC46EDC00D30F6B /* MenuViewController.swift in Sources */,
 				91BD8D572BC4786800D30F6B /* MenuCollectionViewCell.swift in Sources */,
-				91BD8D5A2BC47CBA00D30F6B /* MenuSection.swift in Sources */,
+				91BD8D5A2BC47CBA00D30F6B /* Section.swift in Sources */,
+				91FE9D3E2BC5630200EAE399 /* OrdersCollectionViewCell.swift in Sources */,
 				91BD8D2E2BC46EDC00D30F6B /* AppDelegate.swift in Sources */,
 				91BD8D302BC46EDC00D30F6B /* SceneDelegate.swift in Sources */,
 				91BD8D382BC46EDC00D30F6B /* SingularityHackathon.xcdatamodeld in Sources */,
