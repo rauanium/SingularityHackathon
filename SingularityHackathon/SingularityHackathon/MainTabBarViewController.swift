@@ -17,7 +17,7 @@ class MainTabBarViewController: UITabBarController {
         
         //MARK: - Setting tabbar
         private func setupTabbar() {
-            view.backgroundColor = .black
+//            view.backgroundColor = .black
             let menuViewController = UINavigationController(rootViewController: MenuViewController())
             let ordersViewController = UINavigationController(rootViewController: OrdersViewController())
             let reportViewController = UINavigationController(rootViewController: ReportViewController())
@@ -28,8 +28,20 @@ class MainTabBarViewController: UITabBarController {
             
             let viewControllers: [UINavigationController] = [menuViewController, ordersViewController, reportViewController]
             
+            //settingup default navigation bar
             viewControllers.forEach {
-                $0.navigationBar.prefersLargeTitles = true
+                let navigationBarAppearance = UINavigationBarAppearance()
+                navigationBarAppearance.configureWithOpaqueBackground()
+                
+                navigationBarAppearance.titleTextAttributes = [
+                    NSAttributedString.Key.foregroundColor: UIColor.black
+                ]
+               
+                navigationBarAppearance.backgroundColor = .white
+                $0.navigationBar.standardAppearance = navigationBarAppearance
+                $0.navigationBar.compactAppearance = navigationBarAppearance
+                $0.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+                
             }
             
             setViewControllers(viewControllers, animated: false)

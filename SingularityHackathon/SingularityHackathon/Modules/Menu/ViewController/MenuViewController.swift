@@ -34,8 +34,12 @@ class MenuViewController: UIViewController {
     }
 
     private func setupViews() {
+        
+        
+        
         view.backgroundColor = .background
         view.addSubview(compositionalLayout)
+        navigationItem.title = "Menu"
         
         compositionalLayout.snp.makeConstraints { make in
             make.bottom.top.equalTo(view.safeAreaLayoutGuide)
@@ -58,7 +62,7 @@ extension MenuViewController {
         )
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = .init(top: 16, leading: 8, bottom: 8, trailing: 8)
+        item.contentInsets = .init(top: 8, leading: 8, bottom: 8, trailing: 8)
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(0.5),
@@ -67,7 +71,7 @@ extension MenuViewController {
             count: 2)
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 16, leading: 8, bottom: 0, trailing: 8)
+        section.contentInsets = .init(top: 8, leading: 8, bottom: 0, trailing: 8)
 
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
