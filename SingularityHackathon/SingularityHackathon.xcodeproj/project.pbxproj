@@ -21,6 +21,7 @@
 		91BD8D572BC4786800D30F6B /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD8D562BC4786800D30F6B /* MenuCollectionViewCell.swift */; };
 		91BD8D5A2BC47CBA00D30F6B /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BD8D592BC47CBA00D30F6B /* Section.swift */; };
 		91FE9D3E2BC5630200EAE399 /* OrdersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FE9D3D2BC5630200EAE399 /* OrdersCollectionViewCell.swift */; };
+		91FE9D512BC5C85C00EAE399 /* ReportCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FE9D502BC5C85C00EAE399 /* ReportCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		91BD8D562BC4786800D30F6B /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		91BD8D592BC47CBA00D30F6B /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		91FE9D3D2BC5630200EAE399 /* OrdersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollectionViewCell.swift; sourceTree = "<group>"; };
+		91FE9D502BC5C85C00EAE399 /* ReportCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +126,7 @@
 		91BD8D4A2BC4720700D30F6B /* Report */ = {
 			isa = PBXGroup;
 			children = (
-				91BD8D4D2BC472F500D30F6B /* ReportViewController.swift */,
+				91FE9D4E2BC5C84100EAE399 /* ViewController */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -183,6 +185,23 @@
 			children = (
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		91FE9D4E2BC5C84100EAE399 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				91BD8D4D2BC472F500D30F6B /* ReportViewController.swift */,
+				91FE9D4F2BC5C84800EAE399 /* Subviews */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		91FE9D4F2BC5C84800EAE399 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				91FE9D502BC5C85C00EAE399 /* ReportCollectionViewCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +284,7 @@
 				91BD8D462BC471C900D30F6B /* MainTabBarViewController.swift in Sources */,
 				91BD8D4C2BC472D700D30F6B /* OrdersViewController.swift in Sources */,
 				91BD8D322BC46EDC00D30F6B /* MenuViewController.swift in Sources */,
+				91FE9D512BC5C85C00EAE399 /* ReportCollectionViewCell.swift in Sources */,
 				91BD8D572BC4786800D30F6B /* MenuCollectionViewCell.swift in Sources */,
 				91BD8D5A2BC47CBA00D30F6B /* Section.swift in Sources */,
 				91FE9D3E2BC5630200EAE399 /* OrdersCollectionViewCell.swift in Sources */,

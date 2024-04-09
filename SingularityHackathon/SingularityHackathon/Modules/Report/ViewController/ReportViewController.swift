@@ -78,8 +78,8 @@ class ReportViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .clear
-        collectionView.register(OrdersCollectionViewCell.self,
-            forCellWithReuseIdentifier: OrdersCollectionViewCell.identifier)
+        collectionView.register(ReportCollectionViewCell.self,
+            forCellWithReuseIdentifier: ReportCollectionViewCell.identifier)
         return collectionView
         
     }()
@@ -151,7 +151,7 @@ extension ReportViewController {
         let group = NSCollectionLayoutGroup.vertical(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
-                heightDimension: .fractionalHeight(0.39)
+                heightDimension: .fractionalHeight(0.31)
             ),
             subitems: [item])
         
@@ -165,10 +165,10 @@ extension ReportViewController {
 
 extension ReportViewController {
     private func configureDataSource() {
-        dataSource = foodDataSource(collectionView: compositionalLayout) { (collectionView, indexPath, itemIdentifier) -> OrdersCollectionViewCell? in
+        dataSource = foodDataSource(collectionView: compositionalLayout) { (collectionView, indexPath, itemIdentifier) -> ReportCollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: OrdersCollectionViewCell.identifier,
-                for: indexPath) as! OrdersCollectionViewCell
+                withReuseIdentifier: ReportCollectionViewCell.identifier,
+                for: indexPath) as! ReportCollectionViewCell
             return cell
         }
         applySnapshot()
