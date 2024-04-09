@@ -28,15 +28,17 @@ class ReportViewController: UIViewController {
     }()
     
     private lazy var startDateLabel: UILabel = {
-        let startDate = UILabel()
-        startDate.text = "from:"
-        startDate.font = UIFont.systemFont(ofSize: 16)
-        return startDate
+        let startDateLabel = UILabel()
+        startDateLabel.text = "from:"
+        startDateLabel.font = UIFont.systemFont(ofSize: 16)
+        return startDateLabel
     }()
     
     private lazy var startDate: UIDatePicker = {
         let startDate = UIDatePicker()
         startDate.datePickerMode = .date
+        
+        startDate.addTarget(self, action: #selector(didTapStartDate), for: .valueChanged)
         return startDate
         
     }()
@@ -51,16 +53,16 @@ class ReportViewController: UIViewController {
     }()
     
     private lazy var endDateLabel: UILabel = {
-        let startDate = UILabel()
-        startDate.text = "to:"
-        startDate.font = UIFont.systemFont(ofSize: 16)
-        return startDate
+        let endDateLabel = UILabel()
+        endDateLabel.text = "to:"
+        endDateLabel.font = UIFont.systemFont(ofSize: 16)
+        return endDateLabel
     }()
     
     private lazy var endDate: UIDatePicker = {
-        let startDate = UIDatePicker()
-        startDate.datePickerMode = .date
-        return startDate
+        let endDate = UIDatePicker()
+        endDate.datePickerMode = .date
+        return endDate
         
     }()
     private lazy var filterStack: UIStackView = {
@@ -128,6 +130,13 @@ class ReportViewController: UIViewController {
             make.left.right.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
+    }
+    @objc
+    private func didTapStartDate(sender: UIDatePicker) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        print("date: \(formatter.string(from: sender.date))")
+        presentedViewController?.dismiss(animated: false, completion: nil)
     }
 
 }

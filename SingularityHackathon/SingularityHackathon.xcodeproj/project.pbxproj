@@ -74,8 +74,6 @@
 		91BD8D2C2BC46EDC00D30F6B /* SingularityHackathon */ = {
 			isa = PBXGroup;
 			children = (
-				91FE9D402BC59ABF00EAE399 /* NetworkManager */,
-				91FE9D3F2BC59AB800EAE399 /* Target */,
 				91BD8D472BC471F100D30F6B /* Modules */,
 				91BD8D442BC46FC200D30F6B /* Resources */,
 				91BD8D3E2BC46EDD00D30F6B /* Info.plist */,
@@ -171,20 +169,6 @@
 				91FE9D3D2BC5630200EAE399 /* OrdersCollectionViewCell.swift */,
 			);
 			path = Subviews;
-			sourceTree = "<group>";
-		};
-		91FE9D3F2BC59AB800EAE399 /* Target */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Target;
-			sourceTree = "<group>";
-		};
-		91FE9D402BC59ABF00EAE399 /* NetworkManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		91FE9D4E2BC5C84100EAE399 /* ViewController */ = {
