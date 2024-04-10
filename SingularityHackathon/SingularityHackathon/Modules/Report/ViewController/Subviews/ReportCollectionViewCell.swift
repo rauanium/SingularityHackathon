@@ -21,7 +21,7 @@ class ReportCollectionViewCell: UICollectionViewCell {
     
     private lazy var orderNumber: UILabel = {
         let orderNumber = UILabel()
-        orderNumber.text = "Order #1"
+        orderNumber.text = "Order #"
         orderNumber.font = UIFont.systemFont(ofSize: 18)
         orderNumber.textAlignment = .center
         return orderNumber
@@ -171,6 +171,14 @@ class ReportCollectionViewCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 4
     }
     
+    func configure(data: OrdersDataModel) {
+        orderNumber.text? = "Order #\(data.orderNumber)"
+        orderDate.text = data.orderDate
+        foodName.text = data.foodName
+        foodPrice.text = data.foodPrce
+        foodCount.text = "x\(data.foodCount)"
+        totalValue.text = "\(data.foodPrce)T"
+    }
     
 }
 
