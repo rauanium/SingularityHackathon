@@ -6,8 +6,25 @@
 //
 
 import UIKit
+import Supabase
 
-struct ReportViewModel {
+class ReportViewModel {
+    let client = SupabaseClient(supabaseURL: Secret.projectURL!, supabaseKey: Secret.apiKey)
+    var response: [OrdersDataResponse] = []
+    func getSupabase() async throws {
+        let supabaseResponse: [OrdersDataResponse] = try await client.database
+            .from("Foods")
+            .select()
+            .execute()
+            .value
+        
+        DispatchQueue.main.async {
+            self.response = supabaseResponse
+            print("result: \(supabaseResponse)")
+        }
+        
+    }
+    
     
     var orders: [OrdersDataModel] = [
         .init(orderNumber: 1, orderDate: "10/04/2024", foodImage: UIImage(named: "foodExample")!, foodName: "English Breakfast", foodPrce: "2300", foodCount: 2),
@@ -31,7 +48,7 @@ struct ReportViewModel {
                 sortedOrders.append(order)
             }
         }
-        print("sorted: \(sortedOrders)")
+//        print("sorted: \(sortedOrders)")
         completion(sortedOrders)
         
     }

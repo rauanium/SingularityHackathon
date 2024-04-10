@@ -138,10 +138,12 @@ class ReportViewController: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        createData()
         setupViews()
         configureDataSource()
         setupViewModel()
+        Task.init {
+            await setupAwatViewModel()
+        }
     }
     
     //MARK: - Setting up views
@@ -217,7 +219,19 @@ class ReportViewController: UIViewController {
         countValue.text = "\(orders.count)"
         
         self.applySnapshot()
+        
+        
+        
         }
+    
+    private func setupAwatViewModel() async {
+        viewModel = ReportViewModel()
+        do {
+            try await viewModel?.getSupabase()
+        }catch {
+            print(error)
+        }
+    }
         
     
     
