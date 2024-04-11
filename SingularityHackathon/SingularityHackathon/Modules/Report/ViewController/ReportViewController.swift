@@ -141,9 +141,10 @@ class ReportViewController: UIViewController {
         setupViews()
         configureDataSource()
         setupViewModel()
-        Task.init {
-            await setupAwatViewModel()
-        }
+        
+//        Task.init {
+//            await setupAwatViewModel()
+//        }
     }
     
     //MARK: - Setting up views
@@ -224,14 +225,14 @@ class ReportViewController: UIViewController {
         
         }
     
-    private func setupAwatViewModel() async {
-        viewModel = ReportViewModel()
-        do {
-            try await viewModel?.getSupabase()
-        }catch {
-            print(error)
-        }
-    }
+//    private func setupAwatViewModel() async {
+//        viewModel = ReportViewModel()
+//        do {
+//            try await viewModel?.getSupabase()
+//        }catch {
+//            print(error)
+//        }
+//    }
         
     
     

@@ -187,8 +187,8 @@
 		91BD8D492BC4720200D30F6B /* Orders */ = {
 			isa = PBXGroup;
 			children = (
-				91F31E282BC67F6A008BC603 /* ViewModel */,
 				91FE9D3B2BC562D900EAE399 /* ViewController */,
+				91F31E282BC67F6A008BC603 /* ViewModel */,
 				91F31E252BC67ED1008BC603 /* Model */,
 			);
 			path = Orders;

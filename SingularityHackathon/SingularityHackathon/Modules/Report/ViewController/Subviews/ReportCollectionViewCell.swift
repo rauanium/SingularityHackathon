@@ -173,7 +173,7 @@ class ReportCollectionViewCell: UICollectionViewCell {
     
     func configure(data: OrdersDataModel) {
         orderNumber.text? = "Order #\(data.orderNumber)"
-        orderDate.text = data.orderDate
+//        orderDate.text = data.orderDate
         foodName.text = data.foodName
         foodPrice.text = data.foodPrce
         foodCount.text = "x\(data.foodCount)"

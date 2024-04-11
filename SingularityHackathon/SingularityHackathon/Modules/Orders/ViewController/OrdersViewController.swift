@@ -11,9 +11,10 @@ fileprivate typealias foodDataSource = UICollectionViewDiffableDataSource<Sectio
 fileprivate typealias foodDataSourceSnapShot = NSDiffableDataSourceSnapshot<Section, Int>
 
 class OrdersViewController: UIViewController {
-    
+    var response: [OrdersDataResponse] = []
     private var resource = [Int]()
     private var dataSource: foodDataSource!
+    private var viewModel: OrdersViewModel?
     
     private lazy var compositionalLayout: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
@@ -30,8 +31,27 @@ class OrdersViewController: UIViewController {
         createData()
         setupViews()
         configureDataSource()
+//        setupAwatViewModel()
+        
+        
+        
     }
+//    private func setupAwatViewModel()  {
+//        viewModel = OrdersViewModel()
+////        var result: [OrdersDataResponse] = []
+//        Task {
+//            response = try await viewModel!.getSupabase()
+//            print("response: \(response)")
+////            response.forEach { item in
+////                resource.append(.init(orderNumber: item.id, orderDate: item.createdAt, foodImage: UIImage(named: "foodExample")!, foodName: item.orderedFood, foodPrce: "2000", foodCount: 3))
+////            }
+////            applySnapshot()
+//        }
+////        applySnapshot()
+//        
+//    }
 
+    
     private func setupViews() {
         
         view.backgroundColor = .background

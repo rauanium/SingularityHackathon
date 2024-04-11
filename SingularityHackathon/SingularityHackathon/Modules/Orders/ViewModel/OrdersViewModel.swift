@@ -6,7 +6,21 @@
 //
 
 import Foundation
+import Supabase
 
-struct OrdersViewModel {
+class OrdersViewModel {
+    let client = SupabaseClient(supabaseURL: Secret.projectURL!, supabaseKey: Secret.apiKey)
+//    var response: [OrdersDataResponse] = []
+    
+    func getSupabase() async throws -> [OrdersDataResponse]{
+        let supabaseResponse: [OrdersDataResponse] = try await client.database
+            .from("Orders")
+            .select()
+            .execute()
+            .value
+        print("supabase: \(supabaseResponse)")
+        return supabaseResponse
+        
+    }
     
 }

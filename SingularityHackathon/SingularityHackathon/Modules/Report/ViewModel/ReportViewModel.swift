@@ -9,21 +9,22 @@ import UIKit
 import Supabase
 
 class ReportViewModel {
-    let client = SupabaseClient(supabaseURL: Secret.projectURL!, supabaseKey: Secret.apiKey)
-    var response: [OrdersDataResponse] = []
-    func getSupabase() async throws {
-        let supabaseResponse: [OrdersDataResponse] = try await client.database
-            .from("Foods")
-            .select()
-            .execute()
-            .value
-        
-        DispatchQueue.main.async {
-            self.response = supabaseResponse
-            print("result: \(supabaseResponse)")
-        }
-        
-    }
+//    let client = SupabaseClient(supabaseURL: Secret.projectURL!, supabaseKey: Secret.apiKey)
+//    var response: [OrdersDataResponse] = []
+//    
+//    func getSupabase() async throws {
+//        let supabaseResponse: [OrdersDataResponse] = try await client.database
+//            .from("Foods")
+//            .select()
+//            .execute()
+//            .value
+//        
+//        DispatchQueue.main.async {
+//            self.response = supabaseResponse
+////            print("result: \(supabaseResponse)")
+//        }
+//        
+//    }
     
     
     var orders: [OrdersDataModel] = [
